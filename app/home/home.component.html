@@ -1,0 +1,70 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>Select to SMS or Find Wally or his friends:</p>
+    <!-- <h3>Find who?</h3> -->
+    <ul class = "user">
+    <!--
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    -->
+    <!--
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="locateUser(user.id)">Locate</a>
+            - <a (click)="SMSUser(user.id)">Send SMS</a>
+        </li>
+    -->
+    <!--
+            <li *ngFor="let hero of heroes" 
+            [class.selected]="hero === selectedHero"
+            (click)="onSelect(hero)">
+    -->
+
+        <li *ngFor="let user of users"
+            [class.selected]="user === selectedUser"
+            (click)="onSelect(user)"
+            >
+
+            <!-- each array line is here -->
+            <!-- <span class="badge">{{hero.id}}</span> {{hero.name}} --> 
+            <span class="badge">{{user.id}}</span>
+            <span>{{user.username}}</span>
+            <span>{{user.lastName}}</span>
+            <!--
+            <button class="locate"
+                    (click)="locateUser(user); $event.stopPropagation()">f</button>
+            -->
+            <button class="sms"
+                    (click)="SMSUser(user); $event.stopPropagation()">sms</button>
+        </li>
+
+
+    </ul>
+<!--
+    <div *ngIf = "selectedUser">
+        <h3>
+            {{ selectedUser.name | uppercase }} is Wally's friend
+        </h3>
+        <button (click)="gotoMap">Find</button>    
+    </div>
+-->
+
+<div>
+    <span style="display:inline-block; width: 100%;"></span>
+
+    <!--
+    <p><a [routerLink]="['/locator']">Find</a></p> 
+    <p><a [routerLink]="['/login']">Logout</a></p> 
+    -->
+    <p>
+        <a [routerLink]="['/locator']">Find</a> &nbsp; &nbsp;
+        <a [routerLink]="['/login']">Logout</a>
+    </p> 
+
+    <p>{{ homeMessage }}</p>
+
+</div>
+
+</div>

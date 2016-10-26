@@ -1,0 +1,79 @@
+/*
+#wrapper {
+    width: 400px;
+    height: 400px;
+    border: 2px black solid;
+    margin: auto;
+}
+
+#im {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("app/locator/reeceTestImage.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#contentwrapper {
+width: 100%;
+margin-right: auto;
+margin-left: auto;
+}
+#content {
+padding-left: 260px;
+}
+#right {
+float: right;
+width: 25%;
+}
+#rightImgdiv {
+width: 50%;
+height: 100%
+}
+*/
+
+.object-fit_fill { object-fit: fill }
+.object-fit_contain { object-fit: contain }
+.object-fit_cover { object-fit: cover }
+.object-fit_none { object-fit: none }
+.object-fit_scale-down { object-fit: scale-down }
+
+html { 
+  color: #eee; 
+  padding: 30px;
+  font-family: 'Source Code Pro', Monaco;
+  background-color: #333;
+}
+
+p { font-weight: 200; font-size: 13px; margin-bottom: 10px; margin-top: 0;}
+
+img { height: 120px; background-color: #444;}
+
+img[class] { 
+  width: 100%;
+}
+
+.original-image {
+  margin-bottom: 50px;
+}
+
+.image {
+  float: left;
+  width: 40%;
+  margin: 0 30px 20px 0;
+  
+  &:nth-child(2n) {
+    clear: left;
+  }
+  
+  &:nth-child(2n+1){
+    margin-right: 0;
+  }
+}
+
+
+
+

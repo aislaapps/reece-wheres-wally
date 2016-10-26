@@ -1,0 +1,131 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Visitor Sign In</h2>
+    <form name="form" (ngSubmit)="f.form.valid && visitorregister()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="company">Company</label>
+            <input type="text" class="form-control" name="company" [(ngModel)]="model.company" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Company is required</div>
+        </div>
+        
+         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="visitortype">Visitor Type</label>
+            <!-- <input type="text" class="form-control" name="visitortype" [(ngModel)]="model.visitortype" #username="ngModel" required /> -->
+
+            <br />
+            <input [(ngModel)]="model.visitortype" name="visitortype" value="visitor" id="radioVisitor" type="radio">
+            <label for="radioVisitor">Visitor</label>
+            &nbsp;&nbsp;
+            <input [(ngModel)]="model.visitortype" name="visitortype" value="contractor" id="radioContractor" type="radio">
+            <label for="radioContractor">Contractor</label> 
+            &nbsp;&nbsp;
+            <input [(ngModel)]="model.visitortype" name="visitortype" value="branch" id="radioBranch" type="radio">
+            <label for="radioBranch">Branch</label>
+
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Visitor Type is required</div>
+            <!-- <div>{{model.visitortype}}</div> -->
+        </div>
+        
+        <!--
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="visitortype">Visitor Type</label>
+            
+            <ng-select [allowClear]="true"
+                  [items]="items"
+                  [disabled]="disabled"
+                  (data)="refreshValue($event)"
+                  (selected)="selected($event)"
+                  (removed)="removed($event)"
+                  (typed)="typed($event)"
+                  placeholder="No city selected">
+            </ng-select>
+
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Visitor Type is required</div>
+
+        </div>
+        -->
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="carparked">Are you parked on-site?</label>
+            <br />
+            <input [(ngModel)]="model.carparked" name="carparked" value="yes" id="radioYes" type="radio">
+            <label for="radioYes">Yes</label> 
+            &nbsp;&nbsp;
+            <input [(ngModel)]="model.carpaked" name="carparked" value="no" id="radioNo" type="radio">
+            <label for="radioNo">No</label>
+
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Parking info is required</div>
+            <!-- <div>{{model.carparked}}</div> -->
+        </div>
+
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lookingfor">Who are you here to see?</label>
+            <input type="text" class="form-control" name="lookingfor" [(ngModel)]="model.lookingfor" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">All entries are required</div>
+        </div>
+        
+        <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }"> -->
+<!--
+        <ul class = "user">
+        <li *ngFor="let user of users"
+            [class.selected]="user === selectedUser"
+            (click)="onSelect(user)"
+            >
+-->
+            <!-- each array line is here -->
+            <!-- <span class="badge">{{hero.id}}</span> {{hero.name}} --> 
+<!--
+            <span class="badge">{{user.id}}</span>
+            <span>{{user.username}}</span>
+            <span>{{user.lastName}}</span>
+
+        </li>
+        </ul>
+-->
+        <!-- </div> -->
+<!--
+        <div class="btn-group">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-list">
+              <li role="menuitem"><a class="dropdown-item" href="#">Audi</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">BMW</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Mercedes</a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Maserati</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Porsche</a></li>
+            </ul>
+        </div>
+-->
+<!--
+<div>
+<select [(ngModel)]="selectedStaff.id">
+  <option *ngFor="#staff of staffs" value= {{staff.id}}>{{staff.name}}</option>
+</select>
+<div>
+-->
+        <div class="form-group">
+            <!-- <button [disabled]="loading" class="btn btn-primary">Sign In</button>-->
+            <!--
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            -->
+            <!--
+            <a [routerLink]="['/welcome']" class="btn btn-primary">Sign In</a>
+            <a [routerLink]="['/locator']" class="btn btn-primary">Find</a>
+            -->
+<!--
+<select [(ngModel)]="selectedStaff.id">
+  <option *ngFor="#staff of staffs" value= {{staff.id}}>{{staff.name}}</option>
+</select>
+
+     -->       <button (click)="gotoSignInPage(model)" class="btn btn-primary">Sign In</button>
+            <a [routerLink]="['/login']" class="btn btn-link">Admin</a>
+        </div>
+    </form>
+</div>

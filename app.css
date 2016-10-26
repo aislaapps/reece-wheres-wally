@@ -1,0 +1,20 @@
+﻿a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
+
+.jumbotron-white {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: "white";
+}
+
+.text-center-gray {
+  text-align: center;
+  background-color: #eee;
+}
